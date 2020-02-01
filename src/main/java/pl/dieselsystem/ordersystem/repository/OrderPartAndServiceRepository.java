@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.OrderPartAndService;
 
 @Repository
 public interface OrderPartAndServiceRepository extends JpaRepository<OrderPartAndService,Long> {
+
+    OrderPartAndService findById(long id);
+
 }

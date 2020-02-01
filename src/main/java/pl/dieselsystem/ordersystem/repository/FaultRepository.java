@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.Fault;
 
 @Repository
 public interface FaultRepository extends JpaRepository<Fault,Long> {
+
+    Fault findById(long id);
+
 }

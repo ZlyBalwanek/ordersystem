@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
+
+    User findById(long id);
+
 }

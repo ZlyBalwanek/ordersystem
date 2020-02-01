@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.Operation;
 
 @Repository
 public interface OperationRepository extends JpaRepository<Operation,Long> {
+
+    Operation findById(long id);
+
 }

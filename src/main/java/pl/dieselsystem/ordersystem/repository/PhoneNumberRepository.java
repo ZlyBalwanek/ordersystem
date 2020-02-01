@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.PhoneNumber;
 
 @Repository
 public interface PhoneNumberRepository extends JpaRepository<PhoneNumber,Long> {
+
+    PhoneNumber findById(long id);
+
 }

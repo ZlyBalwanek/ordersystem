@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.Customer;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
+
+    Customer findById(long id);
+
 }

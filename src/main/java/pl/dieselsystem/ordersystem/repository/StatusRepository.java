@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.Status;
 
 @Repository
 public interface StatusRepository extends JpaRepository<Status,Long> {
+
+    Status findById(long id);
+
 }

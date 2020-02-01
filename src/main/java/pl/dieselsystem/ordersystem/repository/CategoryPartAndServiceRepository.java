@@ -6,4 +6,7 @@ import pl.dieselsystem.ordersystem.model.CategoryPartAndService;
 
 @Repository
 public interface CategoryPartAndServiceRepository extends JpaRepository<CategoryPartAndService,Long> {
+
+    CategoryPartAndService findById(long id);
+
 }
