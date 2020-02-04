@@ -25,13 +25,13 @@ public class CustomerService {
 
     }
 
-    public Customer showById(long id) {
+    public Customer findById(long id) {
 
         return customerRepository.findById(id);
 
     }
 
-    public List<Customer> showAll() {
+    public List<Customer> findAll() {
 
         return customerRepository.findAll();
 

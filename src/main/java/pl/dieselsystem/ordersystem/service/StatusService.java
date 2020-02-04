@@ -25,13 +25,13 @@ public class StatusService {
 
     }
 
-    public Status showById(long id) {
+    public Status findById(long id) {
 
         return statusRepository.findById(id);
 
     }
 
-    public List<Status> showAll() {
+    public List<Status> findAll() {
 
         return statusRepository.findAll();
 

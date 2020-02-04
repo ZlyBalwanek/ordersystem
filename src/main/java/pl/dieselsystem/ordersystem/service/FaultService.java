@@ -25,13 +25,13 @@ public class FaultService {
 
     }
 
-    public Fault showById(long id) {
+    public Fault findById(long id) {
 
         return faultRepository.findById(id);
 
     }
 
-    public List<Fault> showAll() {
+    public List<Fault> findAll() {
 
         return faultRepository.findAll();
 

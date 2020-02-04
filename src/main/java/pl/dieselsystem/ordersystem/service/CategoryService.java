@@ -25,13 +25,13 @@ public class CategoryService {
 
     }
 
-    public Category showById(long id) {
+    public Category findById(long id) {
 
         return categoryRepository.findById(id);
 
     }
 
-    public List<Category> showAll() {
+    public List<Category> findAll() {
 
         return categoryRepository.findAll();
 

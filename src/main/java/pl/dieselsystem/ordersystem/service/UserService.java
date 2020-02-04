@@ -25,13 +25,13 @@ public class UserService {
 
     }
 
-    public User showById(long id) {
+    public User findById(long id) {
 
         return userRepository.findById(id);
 
     }
 
-    public List<User> showAll() {
+    public List<User> findAll() {
 
         return userRepository.findAll();
 
