@@ -29,7 +29,7 @@ public class Order {
     @ManyToMany
     private Set<Fault> faultSet = new HashSet<>();
 
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
     private Category category;
 
     @OneToMany
@@ -39,6 +39,7 @@ public class Order {
     private String serialNumber;
     private String description;
     private LocalDateTime created;
+    private boolean open = true;
 
     public Order() {
     }
@@ -147,16 +148,17 @@ public class Order {
         return "Order{" +
                 "id=" + id +
                 ", operationSet=" + operationSet +
-                ", customer=" + customer +
-                ", creator=" + creator +
-                ", worker=" + worker +
+                ", customer=" + customer.getName() +
+                ", creator=" + creator.getName() +
+                ", worker=" + worker.getName() +
                 ", faultSet=" + faultSet +
-                ", category=" + category +
+                ", category=" + category.getCategory() +
                 ", orderPartAndServiceSet=" + orderPartAndServiceSet +
                 ", partNumber='" + partNumber + '\'' +
                 ", serialNumber='" + serialNumber + '\'' +
                 ", description='" + description + '\'' +
                 ", created=" + created +
+                ", open=" + open +
                 '}';
     }
 }

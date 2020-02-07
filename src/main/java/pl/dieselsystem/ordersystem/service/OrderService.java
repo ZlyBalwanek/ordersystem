@@ -20,9 +20,6 @@ public class OrderService {
     private EntityManager entityManager;
 
     @Autowired
-    private CategoryService categoryService;
-
-    @Autowired
     private FaultService faultService;
 
     @Autowired
@@ -34,16 +31,13 @@ public class OrderService {
     @Autowired
     private OperationService operationService;
 
-    @Autowired
-    private StatusService statusService;
-
     public void create(Order order) {
 
         orderRepository.save(order);
 
     }
 
-    public Order showById(long id) {
+    public Order findById(long id) {
 
         return orderRepository.findById(id);
 
@@ -74,12 +68,6 @@ public class OrderService {
 
     }
 
-    public List<Category> findAllCategories() {
-
-        return categoryService.findAll();
-
-    }
-
     public List<Fault> findAllFaults() {
 
         return faultService.findAll();
@@ -92,7 +80,7 @@ public class OrderService {
 
     }
 
-    public User findById(long id) {
+    public User findByUserId(long id) {
 
         return userService.findById(id);
 
@@ -103,7 +91,6 @@ public class OrderService {
         Operation operation = new Operation();
 
         operation.setOrder(order);
-        operation.setStatus(statusService.findById(1));
         operation.setUser(userService.findById(1));
         operation.setDescription("Description 1");
 

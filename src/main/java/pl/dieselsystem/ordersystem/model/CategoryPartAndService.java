@@ -11,7 +11,7 @@ public class CategoryPartAndService {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
     private Category category;
 
     @ManyToOne

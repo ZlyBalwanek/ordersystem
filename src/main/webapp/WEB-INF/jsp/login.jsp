@@ -12,10 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Log in to Order System</title>
 </head>
 <body>
+<div class="container-fluid">
 
-<h1 id="hello">Hello</h1>
-<script src="scripts/hello.js"></script>
+</div>
 </body>
 </html>

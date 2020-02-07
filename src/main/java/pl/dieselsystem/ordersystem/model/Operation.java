@@ -13,8 +13,8 @@ public class Operation {
     @ManyToOne
     private User user;
 
-    @ManyToOne
-    private Status status;
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.accept;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Order order;

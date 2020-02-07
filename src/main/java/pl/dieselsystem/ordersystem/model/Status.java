@@ -1,32 +1,24 @@
 package pl.dieselsystem.ordersystem.model;
 
-import javax.persistence.*;
+public enum Status {
 
-@Entity(name = "status")
-public class Status {
+    accept("Przyjęte do weryfikacji"),
+    verification("Weryfikacja"),
+    await("Oczekiwanie na decyzję"),
+    repair("W naprawie"),
+    ready("Gotowe do odbioru"),
+    pickUp("Odebrane");
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private final String status;
 
-    private String name;
+    Status(String status) {
 
-    public Status() {
+        this.status = status;
+
     }
 
-    public long getId() {
-        return id;
+    public String getStatus() {
+        return this.status;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

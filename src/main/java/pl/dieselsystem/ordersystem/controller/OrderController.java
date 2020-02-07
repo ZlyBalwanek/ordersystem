@@ -20,6 +20,7 @@ public class OrderController {
     public String create(Model model) {
 
         model.addAttribute("order", new Order());
+        model.addAttribute("categories", Category.values());
 
         return "order/create";
 
@@ -28,7 +29,7 @@ public class OrderController {
     @PostMapping("/create")
     public String create(@ModelAttribute Order order) {
 
-        order.setCreator(orderService.findById(1));
+        order.setCreator(orderService.findByUserId(1));
         orderService.setStartingStatus(order);
 
         orderService.create(order);
@@ -67,12 +68,6 @@ public class OrderController {
 
         return orderService.findAllFaults();
 
-    }
-
-    @ModelAttribute("categoryList")
-    public List<Category> categoryList() {
-
-        return orderService.findAllCategories();
     }
 
     @ModelAttribute("userList")
