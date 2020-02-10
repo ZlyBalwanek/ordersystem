@@ -2,12 +2,12 @@ package pl.dieselsystem.ordersystem.model;
 
 public enum Status {
 
-    accept("Przyjęte do weryfikacji"),
-    verification("Weryfikacja"),
-    await("Oczekiwanie na decyzję"),
-    repair("W naprawie"),
-    ready("Gotowe do odbioru"),
-    pickUp("Odebrane");
+    ACCEPT("Przyjęte do weryfikacji"),
+    VERIFICATION("Weryfikacja"),
+    AWAIT("Oczekiwanie na decyzję"),
+    REPAIR("W naprawie"),
+    READY("Gotowe do odbioru"),
+    PICK_UP("Odebrane");
 
     private final String status;
 

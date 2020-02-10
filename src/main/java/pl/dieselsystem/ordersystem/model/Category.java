@@ -2,11 +2,11 @@ package pl.dieselsystem.ordersystem.model;
 
 public enum Category {
 
-    pump("Pompa"),
-    injector("Wtryskiwacz"),
-    unitInjector("Pompowtryskiwacz"),
-    pumpCr("Pompa CR"),
-    injectorCr("Wtryskiwacz CR");
+    PUMP("Pompa"),
+    INJECTOR("Wtryskiwacz"),
+    UNIT_INJECTOR("Pompowtryskiwacz"),
+    PUMP_COMMONRAIL("Pompa CR"),
+    INJECTOR_COMMONRAIL("Wtryskiwacz CR");
 
     private final String category;
 
