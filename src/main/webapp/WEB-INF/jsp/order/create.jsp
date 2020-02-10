@@ -4,7 +4,7 @@
 
 <form:form method="post" action="create" modelAttribute="order">
     Klient: <form:select path="customer" items="${customerList}" itemLabel="name"/><br/>
-    Kategoria: <form:select path="category" items="${categories}"/><br/>
+    Kategoria: <form:select path="category" items="${categories}" itemLabel="category"/><br/>
     Usterki: <form:checkboxes path="faultSet" items="${faultList}" itemLabel="name"/><br/>
     Pracownik: <form:select path="worker" items="${userList}" itemLabel="name"/><br/>
     Numer części: <form:input path="partNumber"/><br/>
