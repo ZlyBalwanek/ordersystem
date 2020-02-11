@@ -15,13 +15,29 @@
     <title>Customer</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Order System</a>
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Utwórz użytkownika<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Resetuj PIN użytkownika<span class="sr-only">(current)</span></a>
+            </li>
+            <form class="form-inline mt-2 mt-md-0">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Log out</button>
+            </form>
+        </ul>
+    </div>
+</nav>
 <div class="container-fluid">
 <form:form method="post" action="create" modelAttribute="user">
     Nazwa użytkownika:<br/>
     <form:input path="name"/><br/>
     Hasło:<br/>
     <form:input path="password"/><br/>
-    Uprawnienie do tworzenie zleceń: <form:checkbox path="role" value="false"/><br/>
+    Administrator zleceń <form:checkbox path="role" value="false"/><br/>
     <button type="submit">Utwórz</button>
 </form:form>
 </div>
