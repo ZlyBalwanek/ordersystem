@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Witaj ${employee}</title>
+    <title>${title}</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -24,49 +24,32 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">Otwórz zlecenie</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Po numerze</a>
-                    <a class="dropdown-item" href="#">Otwarte</a>
+                    <a class="dropdown-item" href="/employees/findOrder">Po numerze</a>
+                    <a class="dropdown-item" href="/employees/showOpen">Otwarte</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">Lista zleceń</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown02">
-                    <a class="dropdown-item" href="#">Z bierzącego miesiąca</a>
-                    <a class="dropdown-item" href="#">Z okresu</a>
+                    <a class="dropdown-item" href="/employees/showMonthly">Z bierzącego miesiąca</a>
+                    <a class="dropdown-item" href="/employees/setDataRange">Z okresu</a>
                 </div>
             </li>
         </ul>
         <ul class="navbar-nav">
             <form class="form-inline mt-2 mt-md-0">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">Log out</button>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit" formaction="/logout">Log out</button>
             </form>
         </ul>
     </div>
 </nav>
 <div class="container-fluid">
+    <div id="welcome-div">
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Numer zlecenia</th>
-            <th>Klient</th>
-            <th>Numer części</th>
-            <th>Data utworzenia</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${orders}" var="order">
-            <tr>
-                <td>${order.id}/${order.created.year}</td>
-                <td>${order.customer.name}</td>
-                <td>${order.partNumber}</td>
-                <td>${order.created}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
 
+
+    </div>
 </div>
 </body>
 </html>

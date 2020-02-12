@@ -15,5 +15,6 @@ public interface OrderRepository extends JpaRepository<Order,Long> {
 
     List<Order> findAllByWorkerAndCreatedAfter(User worker, LocalDateTime monthStart);
     List<Order> findAllByWorkerAndCreatedBetween(User worker, LocalDateTime start, LocalDateTime end);
+    List<Order> findAllByWorkerAndOpenTrue(User worker);
 
 }

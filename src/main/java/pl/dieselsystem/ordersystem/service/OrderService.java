@@ -114,4 +114,10 @@ public class OrderService {
 
     }
 
+    public List<Order> findAllByWorkerAndOpenTrue(User worker) {
+
+        return orderRepository.findAllByWorkerAndOpenTrue(worker);
+
+    }
+
 }

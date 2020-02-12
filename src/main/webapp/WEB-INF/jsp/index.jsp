@@ -16,6 +16,6 @@
 <body>
 
 <h1 id="hello">Hello</h1>
-<script src="../../../resources/static/scripts/dataRange.js"></script>
+
 </body>
 </html>

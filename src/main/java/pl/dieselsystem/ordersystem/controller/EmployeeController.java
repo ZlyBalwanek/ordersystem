@@ -90,7 +90,7 @@ public class EmployeeController {
 
     }
 
-    @GetMapping("setDataRange")
+    @GetMapping("/setDataRange")
     public String setDataRange() {
 
         return "employee/setData";
@@ -111,6 +111,18 @@ public class EmployeeController {
         model.addAttribute("orders", orderList);
 
         return "employee/showAllOrder.jsp";
+
+    }
+
+    @GetMapping("/showOpen")
+    public String showOpen(Model model) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User)authentication.getPrincipal();
+
+        model.addAttribute("orders", orderService.findAllByWorkerAndOpenTrue(user));
+
+        return "employees/showAllOpen";
 
     }
 
