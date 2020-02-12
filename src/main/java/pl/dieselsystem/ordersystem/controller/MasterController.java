@@ -33,5 +33,7 @@ public class MasterController {
 
         userService.create(user);
 
+        return "super/index";
+
     }
 }

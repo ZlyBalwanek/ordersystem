@@ -7,6 +7,7 @@ import pl.dieselsystem.ordersystem.model.*;
 import pl.dieselsystem.ordersystem.repository.OrderRepository;
 
 import javax.persistence.EntityManager;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -95,6 +96,21 @@ public class OrderService {
         operation.setDescription("Description 1");
 
         operationService.create(operation);
+
+    }
+
+    public List<Order> findAllByWorkerAndCreatedAfter(User worker) {
+
+        int year = LocalDateTime.now().getYear();
+        int month = LocalDateTime.now().getMonthValue();
+
+        return orderRepository.findAllByWorkerAndCreatedAfter(worker, LocalDateTime.of(year, month, 1, 0, 0));
+
+    }
+
+    public List<Order> findAllByWorkerAndCreatedBetween(User worker, LocalDateTime start, LocalDateTime end) {
+
+        return orderRepository.findAllByWorkerAndCreatedBetween(worker, start, end);
 
     }
 
