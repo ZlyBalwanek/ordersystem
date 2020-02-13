@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
     <form:input path="name"/><br/>
     Hasło:<br/>
     <form:input path="password"/><br/>
-    Administrator zleceń <form:checkbox path="role" value="false"/><br/>
+    Administrator zleceń <input type="checkbox" name="admin" value="false"/><br/>
     <button type="submit">Utwórz</button>
 </form:form>
 </div>

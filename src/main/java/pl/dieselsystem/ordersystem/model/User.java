@@ -16,7 +16,9 @@ public class User {
 
     private String name;
     private String password;
-    private boolean admin = false;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Role role;
 
     public User() {
     }
@@ -53,11 +55,11 @@ public class User {
         this.password = password;
     }
 
-    public boolean isAdmin() {
-        return admin;
+    public Role getRole() {
+        return role;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

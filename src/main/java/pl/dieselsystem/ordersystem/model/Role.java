@@ -1,8 +1,9 @@
 package pl.dieselsystem.ordersystem.model;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Role {
@@ -12,9 +13,6 @@ public class Role {
     private long id;
 
     private String name;
-
-    @ManyToMany
-    private Set<User> userSet = new HashSet<>();
 
     public Role() {
     }
@@ -35,11 +33,4 @@ public class Role {
         this.name = name;
     }
 
-    public Set<User> getUserSet() {
-        return userSet;
-    }
-
-    public void setUserSet(Set<User> userSet) {
-        this.userSet = userSet;
-    }
 }

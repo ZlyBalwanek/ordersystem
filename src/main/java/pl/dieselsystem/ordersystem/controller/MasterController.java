@@ -3,10 +3,7 @@ package pl.dieselsystem.ordersystem.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.dieselsystem.ordersystem.model.User;
 import pl.dieselsystem.ordersystem.service.UserService;
 
@@ -27,11 +24,9 @@ public class MasterController {
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute User user) {
+    public String create(@ModelAttribute User user, @RequestParam boolean admin) {
 
-
-
-        userService.create(user);
+        userService.create(user, admin);
 
         return "super/index";
 
