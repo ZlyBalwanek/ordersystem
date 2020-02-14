@@ -37,8 +37,11 @@
     Nazwa użytkownika:<br/>
     <form:input path="name"/><br/>
     Hasło:<br/>
-    <form:input path="password"/><br/>
-    Administrator zleceń <input type="checkbox" name="admin" value="false"/><br/>
+    <form:password path="password"/><br/>
+    Administrator zleceń <select name="admin">
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+</select><br/>
     <button type="submit">Utwórz</button>
 </form:form>
 </div>

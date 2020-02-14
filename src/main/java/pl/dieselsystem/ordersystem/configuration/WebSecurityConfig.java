@@ -33,18 +33,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**").permitAll();
-//                .antMatchers("/**").authenticated()
-//                .antMatchers("/").permitAll()
-//                .antMatchers("/login").permitAll()
-//                .antMatchers("/employees/**").hasRole("EMPLOYEE")
-//                .antMatchers("/user/**").hasRole("ADMIN")
-//                .antMatchers("/order/**").hasRole("ADMIN")
-//                .antMatchers("/master/**").hasRole("UBERADMIN")
-//                .and().formLogin()
-//                .loginPage("/login")
-//                .and().logout()
-//                .logoutSuccessUrl("/");
+//                .antMatchers("/**").permitAll();
+                .antMatchers("/**").authenticated()
+                .antMatchers("/").permitAll()
+                .antMatchers("/login").permitAll()
+                .antMatchers("/employees/**").hasRole("EMPLOYEE")
+                .antMatchers("/user/**").hasRole("ADMIN")
+                .antMatchers("/order/**").hasRole("ADMIN")
+                .antMatchers("/master/**").hasRole("UBERADMIN")
+                .and().formLogin()
+                .loginPage("/login")
+                .and().logout()
+                .logoutSuccessUrl("/");
     }
 
 }
