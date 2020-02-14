@@ -16,8 +16,8 @@
     <title>Customer</title>
 </head>
 <body>
-<%@include file="../sections/employeerNavBar.jsp"%>
 <div class="container-fluid">
+
     <form:form method="post" action="create" modelAttribute="order">
         Klient: <form:select path="customer" items="${customerList}" itemLabel="name"/><br/>
         Kategoria: <form:select path="category" items="${categories}" itemLabel="category"/><br/>
@@ -28,6 +28,7 @@
         Dodatkowy opis: <form:input path="description"/><br/>
         <button type="submit">Utwórz</button>
     </form:form>
+
 </div>
 </body>
 </html>

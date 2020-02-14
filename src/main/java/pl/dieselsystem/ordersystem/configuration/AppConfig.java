@@ -1,4 +1,4 @@
-package pl.dieselsystem.ordersystem;
+package pl.dieselsystem.ordersystem.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

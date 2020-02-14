@@ -22,7 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>${title}</title>
+    <title>${title} emp</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -34,7 +34,7 @@
                    aria-expanded="false">Otwórz zlecenie</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="/employees/findOrder">Po numerze</a>
-                    <a class="dropdown-item" href="#">Otwarte</a>
+                    <a class="dropdown-item" href="/employees/showOpen">Otwarte</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -56,7 +56,7 @@
 <div class="container-fluid">
     <div id="welcome-div">
 
-        <h1 id="welcome-text">Witaj ${employee}</h1><br/>
+        <h1 id="welcome-text">Witaj emp</h1><br/>
         <p id="welcome-date">Dzisiaj jest <%=date%></p>
 
     </div>

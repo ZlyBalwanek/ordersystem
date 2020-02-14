@@ -1,11 +1,10 @@
-package pl.dieselsystem.ordersystem;
+package pl.dieselsystem.ordersystem.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import pl.dieselsystem.ordersystem.service.MyUserDetailsService;
@@ -23,6 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
+        auth.inMemoryAuthentication().withUser("Master").password("{noop}password").roles("UBERADMIN");
+
         auth
                 .userDetailsService(myUserDetailsService)
                 .passwordEncoder(bCryptPasswordEncoder);
@@ -38,11 +39,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/login").permitAll()
 //                .antMatchers("/employees/**").hasRole("EMPLOYEE")
 //                .antMatchers("/user/**").hasRole("ADMIN")
+//                .antMatchers("/order/**").hasRole("ADMIN")
 //                .antMatchers("/master/**").hasRole("UBERADMIN")
 //                .and().formLogin()
+//                .loginPage("/login")
 //                .and().logout()
 //                .logoutSuccessUrl("/");
-//                .loginPage("/login");
     }
 
 }

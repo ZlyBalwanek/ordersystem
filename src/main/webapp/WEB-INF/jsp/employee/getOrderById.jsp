@@ -46,12 +46,11 @@
     <form>
         <div class="input-group input-group-lg">
             <input type="text" class="form-control" placeholder="Wpisz numer zlecenia" name="id">
-            <div class="input-group-btn">
+<%--            <div class="input-group-btn">--%>
                 <button formaction="/employees/getOrder" formmethod="get" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
+<%--            </div>--%>
         </div>
     </form>
 </div>
-<script type="application/javascript" src="scripts/"
 </body>
 </html>

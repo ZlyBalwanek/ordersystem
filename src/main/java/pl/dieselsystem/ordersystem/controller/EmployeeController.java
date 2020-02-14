@@ -26,7 +26,7 @@ public class EmployeeController {
     @GetMapping("/index")
     public String index(Model model) {
 
-        model.addAttribute("employee", "Employee");
+        model.addAttribute("title", "Witaj");
 
         return "employee/index";
 
@@ -122,8 +122,16 @@ public class EmployeeController {
 
         model.addAttribute("orders", orderService.findAllByWorkerAndOpenTrue(user));
 
-        return "employees/showAllOpen";
+        return "employees/showAllOrders";
 
     }
+
+//    @ModelAttribute("user")
+//    public User logged() {
+//
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        return (User)authentication.getPrincipal();
+//
+//    }
 
 }
