@@ -22,8 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-        auth.inMemoryAuthentication().withUser("Master").password("{noop}password").roles("UBERADMIN");
-
         auth
                 .userDetailsService(myUserDetailsService)
                 .passwordEncoder(bCryptPasswordEncoder);
@@ -34,15 +32,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 //                .antMatchers("/**").permitAll();
-                .antMatchers("/**").authenticated()
                 .antMatchers("/").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/**").authenticated()
                 .antMatchers("/employees/**").hasRole("EMPLOYEE")
                 .antMatchers("/user/**").hasRole("ADMIN")
                 .antMatchers("/order/**").hasRole("ADMIN")
                 .antMatchers("/master/**").hasRole("UBERADMIN")
                 .and().formLogin()
-                .loginPage("/login")
+//                .loginPage("/login")
                 .and().logout()
                 .logoutSuccessUrl("/");
     }
