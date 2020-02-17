@@ -11,7 +11,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<PhoneNumber> phoneNumbers = new HashSet<>();
 
     @OneToMany

@@ -20,6 +20,8 @@ public class User {
     @ManyToOne(cascade = CascadeType.MERGE)
     private Role role;
 
+    private boolean activate = true;
+
     public User() {
     }
 
@@ -61,5 +63,13 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public boolean isActivate() {
+        return activate;
+    }
+
+    public void setActivate(boolean activate) {
+        this.activate = activate;
     }
 }

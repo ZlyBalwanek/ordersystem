@@ -16,10 +16,13 @@
 </head>
 <body>
 <div class="container-fluid">
-<form:form action="create" method="post" modelAttribute="fault">
-    Opis usterki:<form:input path="name"/><br/>
-    <button type="submit">Create</button>
-</form:form>
+    <form:form action="create" method="post" modelAttribute="fault">
+        Opis usterki:
+        <div>
+            <form:textarea rows="6" cols="70" path="name"/>
+        </div>
+        <button type="submit">Create</button>
+    </form:form>
 </div>
 </body>
 </html>

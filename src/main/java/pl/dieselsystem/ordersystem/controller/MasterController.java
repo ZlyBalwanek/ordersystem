@@ -14,6 +14,13 @@ public class MasterController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/index")
+    public String index() {
+
+        return "super/index";
+
+    }
+
     @GetMapping("/create")
     public String create(Model model) {
 
@@ -26,9 +33,18 @@ public class MasterController {
     @PostMapping("/create")
     public String create(@ModelAttribute User user, @RequestParam boolean admin) {
 
-        userService.create(user, admin);
+            userService.create(user, admin);
 
-        return "super/index";
+        return "super/done";
+
+    }
+
+    @GetMapping("/show")
+    public String showAll(Model model) {
+
+        model.addAttribute("users", userService.findAll());
+
+        return "super/showAll";
 
     }
 }

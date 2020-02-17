@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>${title} admin</title>
+    <title>Użytkownicy</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -36,9 +36,42 @@
     </div>
 </nav>
 <div class="container-fluid">
-    <div id="welcome-div">
+    <div id="info-div">
 
-        <h1 id="welcome-text">Witaj admin</h1><br/>
+        <table>
+            <tr>
+                <th>Nazwa</th>
+                <th>Uprawnienia</th>
+                <th>Zlecenia</th>
+                <th>Akcje</th>
+            </tr>
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <td>${user.name}</td>
+                    <td>${user.role.name}</td>
+                    <td>${user.orderSet.size()}</td>
+                    <td>
+                        <form>
+                            <button type="submit" formaction="/master/of/orders/passwordReset/${user.id}"
+                                    style="background-color: orange">Resetuj hasło
+                            </button>
+                            <c:choose>
+                                <c:when test="${user.activate == true}">
+                                    <button type="submit" formaction="/master/of/orders/deactivate/${user.id}"
+                                            style="background-color: red">Dezaktywuj
+                                    </button>
+                                </c:when>
+                                <c:when test="${user.activate == false}">
+                                    <button type="submit" formaction="/master/of/orders/reactivate/${user.id}"
+                                            style="background-color: limegreen">Reaktywuj
+                                    </button>
+                                </c:when>
+                            </c:choose>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
 
     </div>
 </div>

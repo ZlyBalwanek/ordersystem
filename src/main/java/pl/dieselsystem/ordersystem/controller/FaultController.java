@@ -22,7 +22,7 @@ public class FaultController {
 
         model.addAttribute("fault", new Fault());
 
-        return "fault/create";
+        return "user/fault/create";
 
     }
 
@@ -31,7 +31,7 @@ public class FaultController {
 
         faultService.create(fault);
 
-        return "index";
+        return "user/index";
 
     }
 

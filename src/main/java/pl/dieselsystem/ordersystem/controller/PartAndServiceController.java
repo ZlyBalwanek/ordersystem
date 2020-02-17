@@ -26,7 +26,7 @@ public class PartAndServiceController {
 
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public String create(@ModelAttribute PartAndService pas) {
 
         partAndServiceService.create(pas);
