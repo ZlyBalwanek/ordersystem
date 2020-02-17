@@ -22,7 +22,8 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/master/of/order/create">Dodaj użytkowika<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/master/of/order/create">Dodaj użytkowika<span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/master/of/order/show">Użytkownicy<span class="sr-only">(current)</span></a>
@@ -40,7 +41,9 @@
 
         <h1 id="done">WYKONANO</h1><br/>
         <form id="index-button">
-            <button id="toIndex" class="btn btn-primary my-2 my-sm-0" type="submit" formaction="/master/of/order/index">Do strony głównej</button>
+            <button id="toIndex" class="btn btn-primary my-2 my-sm-0" type="submit" formaction="/master/of/order/index">
+                Do strony głównej
+            </button>
         </form>
 
     </div>

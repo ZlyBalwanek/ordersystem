@@ -1,4 +1,3 @@
-<%@ page import="java.util.Random" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -23,7 +22,8 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/master/of/order/create">Dodaj użytkowika<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/master/of/order/create">Dodaj użytkowika<span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/master/of/order/show">Użytkownicy<span class="sr-only">(current)</span></a>

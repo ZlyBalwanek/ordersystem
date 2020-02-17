@@ -33,7 +33,7 @@ public class MasterController {
     @PostMapping("/create")
     public String create(@ModelAttribute User user, @RequestParam boolean admin) {
 
-            userService.create(user, admin);
+        userService.create(user, admin);
 
         return "super/done";
 
