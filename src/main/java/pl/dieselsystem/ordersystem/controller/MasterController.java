@@ -8,7 +8,7 @@ import pl.dieselsystem.ordersystem.model.User;
 import pl.dieselsystem.ordersystem.service.UserService;
 
 @Controller
-@RequestMapping("/master/of/order") //TODO problem with reactivate, deactivate and passwordReset - 404
+@RequestMapping("/master/of/order")
 public class MasterController {
 
     @Autowired
