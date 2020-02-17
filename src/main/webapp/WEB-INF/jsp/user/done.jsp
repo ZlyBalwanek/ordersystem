@@ -18,7 +18,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Order System</a>
+    <a class="navbar-brand" style="color: deepskyblue">Order System</a>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -54,7 +54,9 @@
 
         <h1 id="done">WYKONANO</h1><br/>
         <form>
-            <button id="toIndex" class="btn btn-primary my-2 my-sm-0" type="submit" formaction="/employee/index">Do strony głównej</button>
+            <button id="toIndex" class="btn btn-primary my-2 my-sm-0" type="submit" formaction="/employee/index">Do
+                strony głównej
+            </button>
         </form>
 
     </div>

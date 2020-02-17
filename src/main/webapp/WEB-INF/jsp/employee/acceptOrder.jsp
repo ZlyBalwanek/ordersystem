@@ -17,7 +17,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Order System</a>
+    <a class="navbar-brand" style="color: deepskyblue">Order System</a>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -55,7 +55,9 @@
                 - ${fault}<br/>
             </c:forEach>
         </p>
-        <button type="submit" formmethod="get" formaction="/employees/editOrder" style="background-color: limegreen">TAK</button>
+        <button type="submit" formmethod="get" formaction="/employees/editOrder" style="background-color: limegreen">
+            TAK
+        </button>
         <button type="submit" formmethod="get" formaction="/employees/index" style="background-color: red">NIE</button>
     </form>
 

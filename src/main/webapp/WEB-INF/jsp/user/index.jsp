@@ -27,7 +27,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Order System</a>
+    <a class="navbar-brand" style="color: deepskyblue">Order System</a>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -62,7 +62,8 @@
     <div id="welcome-div">
 
         <h1 id="welcome-text">Witaj admin</h1><br/>
-        <p id="welcome-date">Dzisiaj jest <%=date%></p>
+        <p id="welcome-date">Dzisiaj jest <%=date%>
+        </p>
 
     </div>
 </div>
