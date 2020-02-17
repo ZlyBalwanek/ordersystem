@@ -7,32 +7,31 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.dieselsystem.ordersystem.model.Fault;
-import pl.dieselsystem.ordersystem.service.FaultService;
+import pl.dieselsystem.ordersystem.model.PartAndService;
+import pl.dieselsystem.ordersystem.service.PartAndServiceService;
 
 @Controller
-@RequestMapping("/fault")
-public class FaultController {
+@RequestMapping("/pas")
+public class PartAndServiceController {
 
     @Autowired
-    FaultService faultService;
+    private PartAndServiceService partAndServiceService;
 
     @GetMapping("/create")
     public String create(Model model) {
 
-        model.addAttribute("fault", new Fault());
+        model.addAttribute("pas", new PartAndService());
 
-        return "fault/create";
-
-    }
-
-    @PostMapping("/create")
-    public String create(@ModelAttribute Fault fault) {
-
-        faultService.create(fault);
-
-        return "index";
+        return "user/partAndService/create";
 
     }
 
+    @PostMapping
+    public String create(@ModelAttribute PartAndService pas) {
+
+        partAndServiceService.create(pas);
+
+        return "user/index";
+
+    }
 }
