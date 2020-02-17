@@ -22,10 +22,10 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Dodaj użytkowika<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/master/of/order/create">Dodaj użytkowika<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Użytkownicy<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/master/of/order/show">Użytkownicy<span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <ul class="navbar-nav">
@@ -51,18 +51,18 @@
                     <td>${user.role.name}</td>
                     <td>${user.orderSet.size()}</td>
                     <td>
-                        <form>
-                            <button type="submit" formaction="/master/of/orders/passwordReset/${user.id}"
+                        <form method="get">
+                            <button type="submit" formaction="/master/of/order/passReset/${user.id}"
                                     style="background-color: orange">Resetuj hasło
                             </button>
                             <c:choose>
                                 <c:when test="${user.activate == true}">
-                                    <button type="submit" formaction="/master/of/orders/deactivate/${user.id}"
+                                    <button type="submit" formaction="/master/of/order/deactivate/${user.id}"
                                             style="background-color: red">Dezaktywuj
                                     </button>
                                 </c:when>
                                 <c:when test="${user.activate == false}">
-                                    <button type="submit" formaction="/master/of/orders/reactivate/${user.id}"
+                                    <button type="submit" formaction="/master/of/order/reactivate/${user.id}"
                                             style="background-color: limegreen">Reaktywuj
                                     </button>
                                 </c:when>

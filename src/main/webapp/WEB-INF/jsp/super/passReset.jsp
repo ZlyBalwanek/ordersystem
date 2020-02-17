@@ -22,10 +22,10 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Dodaj użytkowika<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/master/of/order/create">Dodaj użytkowika<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Użytkownicy<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/master/of/order/show">Użytkownicy<span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <ul class="navbar-nav">
@@ -36,9 +36,13 @@
     </div>
 </nav>
 <div class="container-fluid">
-    <div id="welcome-div">
+    <div id="resetPassword-div">
 
-        <h1 id="welcome-text">Witaj admin</h1><br/>
+        <form:form modelAttribute="user" action="/master/of/order/passReset" method="post">
+            Nowe hasło: <form:password path="password"/><br/>
+            <form:hidden path="id" value="${user.id}"/>
+            <button type="submit">Ustaw</button>
+        </form:form>
 
     </div>
 </div>

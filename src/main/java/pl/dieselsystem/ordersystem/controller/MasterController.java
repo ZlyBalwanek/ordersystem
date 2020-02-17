@@ -8,7 +8,7 @@ import pl.dieselsystem.ordersystem.model.User;
 import pl.dieselsystem.ordersystem.service.UserService;
 
 @Controller
-@RequestMapping("/master/of/order")
+@RequestMapping("/master/of/order") //TODO problem with reactivate, deactivate and passwordReset - 404
 public class MasterController {
 
     @Autowired
@@ -45,6 +45,72 @@ public class MasterController {
         model.addAttribute("users", userService.findAll());
 
         return "super/showAll";
+
+    }
+
+    @GetMapping("/deactivate/{id}")
+    public String deactivate(Model model, @PathVariable long id) {
+
+        model.addAttribute("user", userService.findById(id));
+
+        return "super/deactivate";
+
+    }
+
+    @PostMapping("/deactivate")
+    public String deactivate(@ModelAttribute User user) {
+
+        User user1 = userService.findById(user.getId());
+
+        user1.setActivate(false);
+
+        userService.update(user1);
+
+        return "super/done";
+
+    }
+
+    @GetMapping("/reactivate/{id}")
+    public String reactivate(Model model, @PathVariable long id) {
+
+        model.addAttribute("user", userService.findById(id));
+
+        return "super/reactivate";
+
+    }
+
+    @PostMapping("/reactivate")
+    public String reactivate(@ModelAttribute User user) {
+
+        User user1 = userService.findById(user.getId());
+
+        user1.setActivate(true);
+
+        userService.update(user1);
+
+        return "super/done";
+
+    }
+
+    @GetMapping("/passReset/{id}")
+    public String passReset(Model model, @PathVariable long id) {
+
+        model.addAttribute("user", userService.findById(id));
+
+        return "super/passReset";
+
+    }
+
+    @PostMapping("/passReset")
+    public String passReset(@ModelAttribute User user) {
+
+        User user1 = userService.findById(user.getId());
+
+        user1.setPassword(user.getPassword());
+
+        userService.update(user1);
+
+        return "super/done";
 
     }
 }
