@@ -15,10 +15,7 @@
             <td>${order.id}/${order.created.year}</td>
             <td>${order.customer.name}</td>
             <td>${order.creator.name}</td>
-            <td><c:choose>
-                <c:when test="${order.employee.isEmpty()}">Open</c:when>
-                <c:otherwise>${order.employee.name}</c:otherwise>
-            </c:choose></td>
+            <td>${order.employee.name}</td>
             <td>
                 <form>
                 <button type="submit" formaction="/order/show/${order.id}" formmethod="get">Pokaż</button>

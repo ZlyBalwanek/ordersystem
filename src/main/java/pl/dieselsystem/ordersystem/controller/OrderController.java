@@ -43,7 +43,7 @@ public class OrderController {
 
         model.addAttribute("orders", orderService.findAll());
 
-        return "order/showAll";
+        return "user/order/showAll";
 
     }
 
@@ -52,7 +52,7 @@ public class OrderController {
 
         model.addAttribute("order", orderService.findById(id));
 
-        return "order/show";
+        return "user/order/show";
 
     }
 

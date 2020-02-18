@@ -55,11 +55,8 @@
         Numer zlecenia: ${order.id}/${order.created.year}<br/>
         Klient: ${order.customer.name}<br/>
         Twórca: ${order.creator.name}<br/>
-        Pracownik: <c:choose>
-        <c:when test="${order.employee.isEmpty()}">Open</c:when>
-        <c:otherwise>${order.employee.name}</c:otherwise>
-    </c:choose><br/>
-        Kategoria: ${order.category}<br/>
+        Pracownik: ${order.employee.name}<br/>
+        Kategoria: ${order.category.category}<br/>
         Numer części: ${order.partNumber}<br/>
         Numer seryjny: ${order.serialNumber}<br/>
         Opis: ${order.description}<br/>
