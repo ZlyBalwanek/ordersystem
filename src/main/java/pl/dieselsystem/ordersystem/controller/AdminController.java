@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.dieselsystem.ordersystem.service.OrderService;
 
 @Controller
-@RequestMapping("/user") //TODO implements another methods
+@RequestMapping("/user")
 public class AdminController {
 
     @Autowired
@@ -19,7 +19,5 @@ public class AdminController {
         return "user/index";
 
     }
-
-
 
 }

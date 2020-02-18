@@ -16,13 +16,31 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping("/create")
-    public String create(Model model) {
+    @GetMapping("/create1step")
+    public String create1step(Model model) {
 
         model.addAttribute("order", new Order());
-        model.addAttribute("categories", Category.values());
 
         return "user/order/create1step";
+
+    }
+
+    @GetMapping("/create2step")
+    public String create2step(@ModelAttribute Order order, Model model) {
+
+        model.addAttribute("order", order);
+        model.addAttribute("categories", Category.values());
+
+        return "user/order/create2step";
+
+    }
+
+    @GetMapping("/create3step")
+    public String create3step(@ModelAttribute Order order, Model model) {
+
+        model.addAttribute("order", order);
+
+        return "user/order/create3step";
 
     }
 
@@ -34,7 +52,7 @@ public class OrderController {
 
         orderService.create(order);
 
-        return "index";
+        return "user/done";
 
     }
 

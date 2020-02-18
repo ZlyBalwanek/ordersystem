@@ -1,17 +1,19 @@
 package pl.dieselsystem.ordersystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-@Entity(name = "faults") //TODO @NotNull, @NotEmpty and unique
+@Entity(name = "faults")
 public class Fault {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String name;
 
     public Fault() {

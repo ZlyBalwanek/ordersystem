@@ -41,6 +41,12 @@
                     <a class="dropdown-item" href="/order/setEmployee">Pracownika</a>
                 </div>
             </li>
+            <li>
+                <form class="form-inline my-2 my-md-0">
+                    <input class="form-control" type="text" placeholder="Search">
+                    <button type="submit">Edytuj</button>
+                </form>
+            </li>
         </ul>
         <ul class="navbar-nav">
             <form class="form-inline mt-2 mt-md-0">
@@ -52,14 +58,8 @@
 <div class="container-fluid">
     <div id="welcome-div">
 
-        <form:form method="post" action="create" modelAttribute="order">
+        <form:form method="get" action="create2step" modelAttribute="order">
             Klient: <form:select path="customer" items="${customerList}" itemLabel="name"/><br/>
-            Kategoria: <form:select path="category" items="${categories}" itemLabel="category"/><br/>
-            Usterki: <form:checkboxes path="faultSet" items="${faultList}" itemLabel="name"/><br/>
-            Pracownik: <form:select path="employee" items="${userList}" itemLabel="name"/><br/>
-            Numer części: <form:input path="partNumber"/><br/>
-            Numer seryjny: <form:input path="serialNumber"/><br/>
-            Dodatkowy opis: <form:input path="description"/><br/>
             <button type="submit">Utwórz</button>
         </form:form>
 

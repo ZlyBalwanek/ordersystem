@@ -1,10 +1,12 @@
 package pl.dieselsystem.ordersystem.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "users") //TODO @NotNull, @NotEmpty and unique
+@Entity(name = "users")
 public class User {
 
     @Id
@@ -14,6 +16,9 @@ public class User {
     @ManyToMany
     private Set<Order> orderSet = new HashSet<>();
 
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String name;
     private String password;
 

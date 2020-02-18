@@ -1,23 +1,30 @@
 package pl.dieselsystem.ordersystem.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "customers") //TODO @NotNull, @NotEmpty and unique
+@Entity(name = "customers")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.PERSIST)
     private Set<PhoneNumber> phoneNumbers = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     private Set<Order> orderSet = new HashSet<>();
 
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String name;
+
+    @Column(unique = true)
     private String email;
     private boolean workshop = false;
 

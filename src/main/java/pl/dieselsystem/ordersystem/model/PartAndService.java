@@ -1,9 +1,11 @@
 package pl.dieselsystem.ordersystem.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
-@Entity(name = "parts_and_services") //TODO @NotNull, @NotEmpty and unique
+@Entity(name = "parts_and_services")
 public class PartAndService {
 
     @Id
@@ -13,6 +15,9 @@ public class PartAndService {
     @ManyToMany
     private Set<CategoryPartAndService> categoryPartAndServiceSet;
 
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String name;
     private int price;
     private boolean part = true;

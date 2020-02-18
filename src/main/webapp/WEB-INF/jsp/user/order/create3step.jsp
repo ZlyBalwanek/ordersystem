@@ -53,14 +53,13 @@
     <div id="welcome-div">
 
         <form:form method="post" action="create" modelAttribute="order">
-            Klient: <form:select path="customer" items="${customerList}" itemLabel="name"/><br/>
-            Kategoria: <form:select path="category" items="${categories}" itemLabel="category"/><br/>
             Usterki: <form:checkboxes path="faultSet" items="${faultList}" itemLabel="name"/><br/>
-            Pracownik: <form:select path="worker" items="${userList}" itemLabel="name"/><br/>
-            Numer części: <form:input path="partNumber"/><br/>
-            Numer seryjny: <form:input path="serialNumber"/><br/>
-            Dodatkowy opis: <form:input path="description"/><br/>
             <button type="submit">Utwórz</button>
+            <form:hidden path="customer" value="${order.customer}"/>
+            <form:hidden path="category" value="${order.category}"/>
+            <form:hidden path="partNumber" value="${order.partNumber}"/>
+            <form:hidden path="serialNumber" value="${order.serialNumber}"/>
+            <form:hidden path="description" value="${order.description}"/>
         </form:form>
 
     </div>

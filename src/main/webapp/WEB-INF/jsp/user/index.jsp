@@ -34,7 +34,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">Utwórz</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/order/create">Zlecenie</a>
+                    <a class="dropdown-item" href="/order/create1step">Zlecenie</a>
                     <a class="dropdown-item" href="/customer/create">Klienta</a>
                     <a class="dropdown-item" href="/fault/create">Usterka</a>
                     <a class="dropdown-item" href="/pas/create">Cześć/Usługę</a>

@@ -3,11 +3,13 @@ package pl.dieselsystem.ordersystem.model;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "orders") //TODO @NotNull, @NotEmpty and unique
+@Entity(name = "orders")
 public class Order {
 
     @Id
@@ -35,6 +37,8 @@ public class Order {
     @OneToMany
     private Set<OrderPartAndService> orderPartAndServiceSet = new HashSet<>();
 
+    @NotNull
+    @NotEmpty
     private String partNumber;
     private String serialNumber;
     private String description;

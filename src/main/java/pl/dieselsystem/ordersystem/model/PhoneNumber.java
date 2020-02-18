@@ -1,8 +1,10 @@
 package pl.dieselsystem.ordersystem.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-@Entity(name = "phone_numbers") //TODO @NotNull, @NotEmpty and unique
+@Entity(name = "phone_numbers")
 public class PhoneNumber {
 
     @Id
@@ -12,6 +14,9 @@ public class PhoneNumber {
     @ManyToOne
     private Customer customer;
 
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String number;
 
     public PhoneNumber() {
