@@ -23,7 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>${title} admin</title>
+    <title>Witaj ${user.name}</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -34,20 +34,20 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">Utwórz</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="/employees/findOrder">Zlecenie</a>
-                    <a class="dropdown-item" href="/employees/showOpen">Klienta</a>
-                    <a class="dropdown-item" href="/employees/showOpen">Usterka</a>
-                    <a class="dropdown-item" href="/employees/showOpen">Cześć/Usługę</a>
+                    <a class="dropdown-item" href="/order/create">Zlecenie</a>
+                    <a class="dropdown-item" href="/customer/create">Klienta</a>
+                    <a class="dropdown-item" href="/fault/create">Usterka</a>
+                    <a class="dropdown-item" href="/pas/create">Cześć/Usługę</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">Lista zleceń</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown02">
-                    <a class="dropdown-item" href="/employees/showMonthly">Otwarte</a>
-                    <a class="dropdown-item" href="/employees/showMonthly">Wszystkie</a>
-                    <a class="dropdown-item" href="/employees/setDataRange">Z okresu</a>
-                    <a class="dropdown-item" href="/employees/setDataRange">Pracownika</a>
+                    <a class="dropdown-item" href="/order/showOpen">Otwarte</a>
+                    <a class="dropdown-item" href="/order/showAll">Wszystkie</a>
+                    <a class="dropdown-item" href="/order/setDataRange">Z okresu</a>
+                    <a class="dropdown-item" href="/order/setEmployee">Pracownika</a>
                 </div>
             </li>
         </ul>
@@ -61,7 +61,7 @@
 <div class="container-fluid">
     <div id="welcome-div">
 
-        <h1 id="welcome-text">Witaj admin</h1><br/>
+        <h1 id="welcome-text">Witaj ${user.name}</h1><br/>
         <p id="welcome-date">Dzisiaj jest <%=date%>
         </p>
 

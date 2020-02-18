@@ -24,7 +24,7 @@ public class Order {
     private User creator;
 
     @ManyToOne
-    private User worker = null;
+    private User employee = null;
 
     @ManyToMany
     private Set<Fault> faultSet = new HashSet<>();
@@ -83,12 +83,12 @@ public class Order {
         this.creator = creator;
     }
 
-    public User getWorker() {
-        return worker;
+    public User getEmployee() {
+        return employee;
     }
 
-    public void setWorker(User worker) {
-        this.worker = worker;
+    public void setEmployee(User employee) {
+        this.employee = employee;
     }
 
     public Set<Fault> getFaultSet() {
@@ -143,6 +143,14 @@ public class Order {
         return created;
     }
 
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -150,7 +158,7 @@ public class Order {
                 ", operationSet=" + operationSet +
                 ", customer=" + customer.getName() +
                 ", creator=" + creator.getName() +
-                ", worker=" + worker.getName() +
+                ", worker=" + employee.getName() +
                 ", faultSet=" + faultSet +
                 ", category=" + category.getCategory() +
                 ", orderPartAndServiceSet=" + orderPartAndServiceSet +

@@ -14,18 +14,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>${title} admin</title>
+    <title>Dodawanie części/usługi</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" style="color: deepskyblue">Order System</a>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Dodaj użytkowika<span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Utwórz</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="/order/create">Zlecenie</a>
+                    <a class="dropdown-item" href="/customer/create">Klienta</a>
+                    <a class="dropdown-item" href="/fault/create">Usterka</a>
+                    <a class="dropdown-item" href="/pas/create">Cześć/Usługę</a>
+                </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Użytkownicy<span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Lista zleceń</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown02">
+                    <a class="dropdown-item" href="/order/showOpen">Otwarte</a>
+                    <a class="dropdown-item" href="/order/showAll">Wszystkie</a>
+                    <a class="dropdown-item" href="/order/setDataRange">Z okresu</a>
+                    <a class="dropdown-item" href="/order/setEmployee">Pracownika</a>
+                </div>
             </li>
         </ul>
         <ul class="navbar-nav">
@@ -38,15 +52,19 @@
 <div class="container-fluid">
     <div id="welcome-div">
 
-        <form:form method="post" action="create" modelAttribute="pas">
-            Nazwa: <form:input path="name"/><br/>
-            Część: <form:select path="part">
-            <option value="true">Tak</option>
-            <option value="false">Nie</option>
-        </form:select><br/>
-            Cena: <form:input path="price" value="0"/><br/>
-            <button type="submit">Utwórz</button>
-        </form:form>
+        <div id="form-div">
+
+            <form:form method="post" action="create" modelAttribute="pas">
+                Nazwa: <form:input path="name"/><br/>
+                Część: <form:select path="part">
+                <option value="true">Tak</option>
+                <option value="false">Nie</option>
+            </form:select><br/>
+                Cena: <form:input path="price" value="0"/><br/>
+                <button type="submit">Utwórz</button>
+            </form:form>
+
+        </div>
 
     </div>
 </div>

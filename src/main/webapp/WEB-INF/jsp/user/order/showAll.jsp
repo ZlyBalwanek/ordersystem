@@ -6,15 +6,23 @@
     <tr>
         <th>Numer zlecenia</th>
         <th>Klient</th>
+        <th>Twórca</th>
+        <th>Pracownik</th>
+        <th>Klient</th>
     </tr>
     <c:forEach items="${orders}" var="order">
         <tr>
             <td>${order.id}/${order.created.year}</td>
             <td>${order.customer.name}</td>
+            <td>${order.creator.name}</td>
+            <td><c:choose>
+                <c:when test="${order.employee.isEmpty()}">Open</c:when>
+                <c:otherwise>${order.employee.name}</c:otherwise>
+            </c:choose></td>
             <td>
                 <form>
-                <button type="submit" formaction="/order/show/${order.id}" formmethod="get">Show</button>
-                <button type="submit" formaction="/order/edit/${order.id}" formmethod="get">Update</button>
+                <button type="submit" formaction="/order/show/${order.id}" formmethod="get">Pokaż</button>
+                <button type="submit" formaction="/order/edit/${order.id}" formmethod="get">Edytuj</button>
                 </form>
             </td>
         </tr>

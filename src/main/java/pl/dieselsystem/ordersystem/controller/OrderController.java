@@ -22,7 +22,7 @@ public class OrderController {
         model.addAttribute("order", new Order());
         model.addAttribute("categories", Category.values());
 
-        return "user/order/create";
+        return "user/order/create1step";
 
     }
 

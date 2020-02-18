@@ -43,17 +43,17 @@ public class EmployeeController {
     public String getOrder(Model model, @PathVariable long id) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User)authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
 
         Order order = orderService.findById(id);
 
-        if (order.getWorker() == null) {
+        if (order.getEmployee() == null) {
 
             model.addAttribute("order", order);
 
             return "employee/acceptOrder.jsp";
 
-        } else if (order.getWorker() == user) {
+        } else if (order.getEmployee() == user) {
 
             model.addAttribute("order", order);
 
@@ -69,8 +69,7 @@ public class EmployeeController {
     public String editOrder(@ModelAttribute Order order) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User)authentication.getPrincipal();
-        long userId = user.getId();
+        User user = (User) authentication.getPrincipal();
 
         return ""; //TODO complete
 
@@ -80,13 +79,13 @@ public class EmployeeController {
     public String showMonthlyOrders(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User)authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
 
-        List<Order> orderList = orderService.findAllByWorkerAndCreatedAfter(user);
+        List<Order> orderList = orderService.findAllByEmployeeAndCreatedAfter(user);
 
         model.addAttribute("orders", orderList);
 
-        return "employee/showAllOrder.jsp";
+        return "employee/showAllOrders";
 
     }
 
@@ -101,12 +100,12 @@ public class EmployeeController {
     public String showOrderByDataRange(Model model, @PathVariable String start, @PathVariable String end) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User)authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
 
         LocalDateTime minDate = LocalDateTime.parse(start);
         LocalDateTime maxDate = LocalDateTime.parse(end);
 
-        List<Order> orderList = orderService.findAllByWorkerAndCreatedBetween(user, minDate, maxDate);
+        List<Order> orderList = orderService.findAllByEmployeeAndCreatedBetween(user, minDate, maxDate);
 
         model.addAttribute("orders", orderList);
 
@@ -118,11 +117,12 @@ public class EmployeeController {
     public String showOpen(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User)authentication.getPrincipal();
+        User user = (User) authentication.getPrincipal();
 
-        model.addAttribute("orders", orderService.findAllByWorkerAndOpenTrue(user));
 
-        return "employees/showAllOrders";
+        model.addAttribute("orders", orderService.findAllByEmployeeAndOpenTrue(user));
+
+        return "employee/showAllOrders";
 
     }
 

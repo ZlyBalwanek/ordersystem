@@ -22,11 +22,11 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/master/of/order/create">Mechanik<span
+                <a class="nav-link" href="/employees/index">Mechanik<span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/master/of/order/show">Pracowanik biura<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/user/index">Pracowanik biura<span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </div>

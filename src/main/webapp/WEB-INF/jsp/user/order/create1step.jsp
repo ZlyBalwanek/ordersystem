@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Dodawanie klienta</title>
+    <title>Tworzenie zlecenia</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -50,17 +50,16 @@
     </div>
 </nav>
 <div class="container-fluid">
-    <div id="form-div">
+    <div id="welcome-div">
 
-        <form:form method="post" action="create" modelAttribute="customer">
-            Nazwa: <form:input path="name"/><br/>
-            E-mail: <form:input path="email"/><br/>
-            Warsztat: <form:select path="workshop">
-            <option value="true">Tak</option>
-            <option value="false">Nie</option>
-        </form:select><br/>
-            Numer tel 1:<input type="number" name="phone1"/><br/>
-            Numer tel 2:<input type="number" name="phone2"/><br/>
+        <form:form method="post" action="create" modelAttribute="order">
+            Klient: <form:select path="customer" items="${customerList}" itemLabel="name"/><br/>
+            Kategoria: <form:select path="category" items="${categories}" itemLabel="category"/><br/>
+            Usterki: <form:checkboxes path="faultSet" items="${faultList}" itemLabel="name"/><br/>
+            Pracownik: <form:select path="employee" items="${userList}" itemLabel="name"/><br/>
+            Numer części: <form:input path="partNumber"/><br/>
+            Numer seryjny: <form:input path="serialNumber"/><br/>
+            Dodatkowy opis: <form:input path="description"/><br/>
             <button type="submit">Utwórz</button>
         </form:form>
 
