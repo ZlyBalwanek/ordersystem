@@ -18,7 +18,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" style="color: deepskyblue">Order System</a>
+    <a class="navbar-brand" style="color: deepskyblue" href="/user/index">Order System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -58,7 +61,6 @@
             Numer seryjny: <form:input path="serialNumber"/><br/>
             Dodatkowy opis: <form:input path="description"/><br/>
             <button type="submit">Utwórz</button>
-            <form:hidden path="customer" value="${order.customer}"/>
         </form:form>
 
     </div>

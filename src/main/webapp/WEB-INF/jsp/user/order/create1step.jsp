@@ -18,7 +18,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" style="color: deepskyblue">Order System</a>
+    <a class="navbar-brand" style="color: deepskyblue" href="/user/index">Order System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -58,10 +61,14 @@
 <div class="container-fluid">
     <div id="welcome-div">
 
-        <form:form method="get" action="create2step" modelAttribute="order">
-            Klient: <form:select path="customer" items="${customerList}" itemLabel="name"/><br/>
+        <form method="get" action="create2step">
+            Klient: <select name="id">
+            <c:forEach items="${customerList}" var="customer">
+                <option value="${customer.id}">${customer.name}</option>
+            </c:forEach>
+        </select><br/>
             <button type="submit">Utwórz</button>
-        </form:form>
+        </form>
 
     </div>
 </div>

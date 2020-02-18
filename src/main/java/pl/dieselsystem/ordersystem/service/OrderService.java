@@ -99,24 +99,30 @@ public class OrderService {
 
     }
 
-    public List<Order> findAllByEmployeeAndCreatedAfter(User worker) {
+    public List<Order> findAllByEmployeeAndCreatedAfter(User employee) {
 
         int year = LocalDateTime.now().getYear();
         int month = LocalDateTime.now().getMonthValue();
 
-        return orderRepository.findAllByEmployeeAndCreatedAfter(worker, LocalDateTime.of(year, month, 1, 0, 0));
+        return orderRepository.findAllByEmployeeAndCreatedAfter(employee, LocalDateTime.of(year, month, 1, 0, 0));
 
     }
 
-    public List<Order> findAllByEmployeeAndCreatedBetween(User worker, LocalDateTime start, LocalDateTime end) {
+    public List<Order> findAllByEmployeeAndCreatedBetween(User employee, LocalDateTime start, LocalDateTime end) {
 
-        return orderRepository.findAllByEmployeeAndCreatedBetween(worker, start, end);
+        return orderRepository.findAllByEmployeeAndCreatedBetween(employee, start, end);
 
     }
 
-    public List<Order> findAllByEmployeeAndOpenTrue(User worker) {
+    public List<Order> findAllByEmployeeAndOpenTrue(User employee) {
 
-        return orderRepository.findAllByEmployeeAndOpenTrue(worker);
+        return orderRepository.findAllByEmployeeAndOpenTrue(employee);
+
+    }
+
+    public List<Order> findAllByOpenTrue() {
+
+        return orderRepository.findAllByOpenTrue();
 
     }
 

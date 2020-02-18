@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.dieselsystem.ordersystem.model.Order;
 import pl.dieselsystem.ordersystem.model.User;
 import pl.dieselsystem.ordersystem.service.OrderService;
+import pl.dieselsystem.ordersystem.service.UserService;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,6 +23,9 @@ public class EmployeeController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/index")
     public String index(Model model) {
@@ -116,11 +120,12 @@ public class EmployeeController {
     @GetMapping("/showOpen")
     public String showOpen(Model model) {
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User) authentication.getPrincipal();
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        User user = (User) authentication.getPrincipal();
 
+        User user = userService.findById(2);
 
-        model.addAttribute("orders", orderService.findAllByEmployeeAndOpenTrue(user));
+        model.addAttribute("orders", orderService.findAllByOpenTrue());
 
         return "employee/showAllOrders";
 
