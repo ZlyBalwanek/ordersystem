@@ -2,7 +2,7 @@ package pl.dieselsystem.ordersystem.model;
 
 import javax.persistence.*;
 
-@Entity(name = "phone_numbers")
+@Entity(name = "phone_numbers") //TODO @NotNull, @NotEmpty and unique
 public class PhoneNumber {
 
     @Id

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "orders")
+@Entity(name = "orders") //TODO @NotNull, @NotEmpty and unique
 public class Order {
 
     @Id

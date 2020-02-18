@@ -3,7 +3,7 @@ package pl.dieselsystem.ordersystem.model;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity(name = "parts_and_services")
+@Entity(name = "parts_and_services") //TODO @NotNull, @NotEmpty and unique
 public class PartAndService {
 
     @Id

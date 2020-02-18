@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "customers")
+@Entity(name = "customers") //TODO @NotNull, @NotEmpty and unique
 public class Customer {
 
     @Id
